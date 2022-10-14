@@ -1,0 +1,256 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- services_human:
+    use_entities: true
+- human_chat:
+    use_entities: true
+- human_email:
+    use_entities: true
+- human_call:
+    use_entities: true
+- browse_service_list:
+    use_entities: true
+- brows_travel_package_information:
+    use_entities: true
+- inform_demand_destination:
+    use_entities: true
+- longtime_package:
+    use_entities: true
+- shorttime_package:
+    use_entities: true
+- airline_services:
+    use_entities: true
+- check_in_baggage:
+    use_entities: true
+- inform_information:
+    use_entities: true
+- accommodation_services:
+    use_entities: true
+- inform_feedback:
+    use_entities: true
+- inform_scold:
+    use_entities: true
+- inform_unidentifiable:
+    use_entities: true
+- buy_air_ticket:
+    use_entities: true
+- buy_rail_ticket:
+    use_entities: true
+- inform_demand_seat_not_neer_window:
+    use_entities: true
+- inform_demand_seat_neer_window:
+    use_entities: true
+- choose_service_id:
+    use_entities: true
+- modify_order:
+    use_entities: true
+- sign_in:
+    use_entities: true
+- lunch_services:
+    use_entities: true
+- nanjing-fuzimiao:
+    use_entities: true
+- london:
+    use_entities: true
+- sign_up:
+    use_entities: true
+entities:
+- destination
+- weight
+- feedback
+- service_id
+- username
+- password
+- login_or_not
+- sign_in_or_up
+slots:
+  login_or_not:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: false
+    auto_fill: true
+    influence_conversation: true
+  sign_in_or_up:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  username:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  password:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  feedback:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: 1
+    auto_fill: true
+    influence_conversation: true
+    max_value: 10.0
+    min_value: 0.0
+  destination:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  weight:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  service_id:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: |-
+      Hi. Nice to talk to you.
+      I'm a chatbot from Trippy Travel. And my name is Tetee.
+  utter_goodbye:
+  - text: Bye
+  utter_show_menu:
+  - text: |-
+      I can provide you with these services:
+      	Browse service list, to strat my trip
+      	Modify my order
+      	Human services
+  utter_show_list_human:
+  - text: |-
+      Please select the human service you require:
+        Chat
+        Email
+        Call
+  utter_provide_information:
+  - text: |-
+      Travel Service List:
+      	Travel packages
+      	Rail services
+      	Airline services
+      	Accommodation services
+      	Lunch services
+  utter_connect_supervisor:
+  - text: The human supervisor is on the line.
+  utter_show_name_supervisor:
+  - text: Xulong Yin will help you.
+  utter_show_email_address:
+  - text: Please email us at xyuan19@student.oulu.fi.
+  utter_show_phone_number:
+  - text: Please call us at 15083079618.
+  utter_select_else:
+  - text: Need help with something else? (Yes/No)
+  utter_select_feedback:
+  - text: Do you want to rate our service? (Yes/No)
+  utter_ask_feedback:
+  - text: Please rate our service (1~10).
+  utter_apology_scold:
+  - image: https://www.bing.com/th/id/OGC.27b1a87c3c92a048d07936d4b03e325b?pid=1.7&rurl=http%3a%2f%2fi.123g.us%2fc%2fgen_sorry%2fcard%2f343577.gif&ehk=mF3%2fQ%2fRP9%2bWew7SB3oVMQ95wo4s2dNK%2bHs6A%2bGixwZI%3d
+    text: |-
+      I am very sorry for the trouble and inconvenience caused to you. I am still making progress.
+      In order to make up for your loss, the following are the services I can provide for you.
+  utter_ask_demand_seat:
+  - text: Please choose the seat place (by the window OR by the corridor)
+  utter_ask_for_wait:
+  - text: Please wait a minute...
+  utter_give_air_ticket:
+  - text: (Provide the list of air ticket.)(自定义action)
+  utter_give_rail_ticket:
+  - text: (Provide the list of rail ticket.)(自定义action)
+  utter_choose_service_by_id:
+  - text: Please input the id number of the servise you want to buy. (Only an integer number.)
+  utter_add_the_service:
+  - text: (check and add this service.)(自定义action)
+  utter_modify_order:
+  - text: Cancel the order and deduct 10% service fee. The service fee and refund information will be contacted by a human waiter within 1-3 working days. Welcome to visit.
+  utter_modify_order2:
+  - text: Please input the id number of the service you wanna cancel.
+  utter_show_users_order:
+  - text: 自定义action, show_users_order
+  utter_cancel_users_service:
+  - text: 自定义action, cancel_users_service
+  utter_ask_start_point:
+  - text: Please provide your start place:\
+  utter_ask_for_pay_charge:
+  - text: |-
+      The service have been added into your order, please pay the charge onsite. (Because its just a demo chatbot without functions of Online payment and verification.
+      If you want to change this order, you can input 'change order' or back to menu to change.
+  utter_ask_destination:
+  - text: Please provide your destination:\
+  utter_apology_unidentifiable:
+  - text: I'm sorry that I can't understand what you said. Here's what I can do for you(*￣︶￣)：
+  utter_brows_travel_packages_information:
+  - text: |-
+      Please select tour duration:
+      	Over than 10 days
+      	Less than 10 days
+  utter_provide_longtime_information:
+  - text: (Provide the list of packages over 10 days including a free guide.)(自定义action)
+  utter_provide_shorttime_information:
+  - text: (Provide the list of tour packages available for less than 10 days without guaranteed accommodation.)(customer action)
+  utter_ask_service_type:
+  - text: |-
+      What service do you need?
+      	buy air ticket.
+      	Check-in baggage.
+  utter_ask_baggage_information:
+  - text: Please check-in baggage weight.
+  utter_acc_service_company_list_and_info:
+  - text: (Provide the list of hotel including the company information.)(自定义action)
+  utter_lunch_service_company_list_and_info:
+  - text: (Provide the list of canteen including the company information.)(自定义action)
+  utter_fuzimiao:
+  - image: https://tse1-mm.cn.bing.net/th/id/OIP-C.DFACVziDL8fiHWF4TdVWvwHaE9?w=245&h=180&c=7&r=0&o=5&dpr=1.65&pid=1.7
+    text: here is a picture of fuzimian, and the travel packages about fuzimiao as shown following：
+  utter_2_city:
+  - text: |-
+      there have 2 packages to Paris：
+        package id = 3:go paris from 9,Oct to 30,Oct. with free guides.
+        package_id = 6:go paris from 9,Oct to 12,Oct.
+      there have 1 packages to London：
+        package id = 5:go London from 9,Oct to 27,Oct. with free guides.
+actions:
+- action_sign_in_or_up
+forms:
+  sign_in_form:
+    required_slots:
+      password:
+      - entity: password
+        type: from_entity
+      username:
+      - entity: username
+        type: from_entity
+  sign_up_form:
+    required_slots:
+      password:
+      - entity: password
+        type: from_entity
+      username:
+      - entity: username
+        type: from_entity
+e2e_actions: []

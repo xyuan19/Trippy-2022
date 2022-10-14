@@ -1,0 +1,259 @@
+version: "2.0"
+
+stories:
+
+- story: greet_and_sign
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - slot_was_set:
+      - login_or_not: false
+  - action: action_sign_in_or_up
+
+- story: sign up
+  steps:
+  - intent: sign_up
+  - action: sign_up_form
+  - active_loop: sign_up_form
+  - slot_was_set:
+    - requested_slot: username
+  - slot_was_set:
+    - username: XiaoyuYuan
+  - slot_was_set:
+    - username: XiaoyuYuan
+  - slot_was_set:
+    - requested_slot: password
+  - slot_was_set:
+    - password: '000305'
+  - slot_was_set:
+    - password: '000305'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+#  - action: action_register
+#  - slot_was_set:
+#    - is_authenticated: true
+  - action: utter_show_menu
+
+- story: 15 Human services
+  steps:
+  - intent: services_human
+  - action: utter_show_list_human
+
+- story: chat with the supervisor
+  steps:
+  - intent: human_chat
+  - action: utter_connect_supervisor
+  - action: utter_show_name_supervisor
+  - action: utter_select_else
+
+- story: send an email for detailed inquiry
+  steps:
+  - intent: human_email
+  - action: utter_show_email_address
+  - action: utter_select_else
+
+- story: call to the supervisor
+  steps:
+  - intent: human_call
+  - action: utter_show_phone_number
+  - action: utter_select_else
+
+- story: else service (yes)
+  steps:
+  - action: utter_select_else
+  - intent: affirm
+  - action: utter_show_menu
+
+- story: else service (no)
+  steps:
+  - action: utter_select_else
+  - intent: deny
+  - action: utter_select_feedback
+
+- story: feedback (yes)
+  steps:
+  - action: utter_select_feedback
+  - intent: affirm
+  - action: utter_ask_feedback
+  - intent: inform_feedback
+  - action: utter_goodbye
+
+- story: feedback (no)
+  steps:
+  - action: utter_select_feedback
+  - intent: deny
+  - action: utter_goodbye
+
+- story: scold
+  steps:
+  - intent: inform_scold
+  - action: utter_apology_scold
+  - action: utter_show_menu
+
+
+- story: show service list
+  steps:
+  - intent: browse_service_list
+  - action: utter_provide_information
+
+- story: Travel packages
+  steps:
+  - intent: brows_travel_package_information
+  - action: utter_ask_destination
+  - intent: inform_demand_destination
+  - action: utter_brows_travel_packages_information
+
+- story: Package for more than 10 days
+  steps:
+  - intent: longtime_package
+  - action: utter_ask_for_wait
+  - action: utter_provide_longtime_information
+  - action: utter_choose_service_by_id
+  - intent: choose_service_id
+  - action: utter_add_the_service
+  - action: utter_ask_for_pay_charge
+  - action: utter_select_else
+
+- story: Package for less than 10 days
+  steps:
+  - intent: shorttime_package
+  - action: utter_ask_for_wait
+  - action: utter_provide_shorttime_information
+  - action: utter_choose_service_by_id
+  - intent: choose_service_id
+  - action: utter_add_the_service
+  - action: utter_ask_for_pay_charge
+  - action: utter_select_else
+
+- story: airline services
+  steps:
+  - intent: airline_services
+  - action: utter_ask_service_type
+
+- story: check-in baggage
+  steps:
+  - intent: check_in_baggage
+  - action: utter_ask_baggage_information
+  - intent: inform_information
+  - action: utter_ask_for_pay_charge
+  - action: utter_select_else
+
+- story: select accommodation services
+  steps:
+  - intent: accommodation_services
+  - action: utter_ask_destination
+  - intent: inform_demand_destination
+  - action: utter_ask_for_wait
+  - action: utter_acc_service_company_list_and_info
+  - action: utter_choose_service_by_id
+  - intent: choose_service_id
+  - action: utter_add_the_service
+  - action: utter_ask_for_pay_charge
+  - action: utter_select_else
+
+- story: select lunch services
+  steps:
+  - intent: lunch_services
+  - action: utter_ask_destination
+  - intent: inform_demand_destination
+  - action: utter_ask_for_wait
+  - action: utter_lunch_service_company_list_and_info
+  - action: utter_choose_service_by_id
+  - intent: choose_service_id
+  - action: utter_add_the_service
+  - action: utter_ask_for_pay_charge
+  - action: utter_select_else
+
+- story: unidentifiable speak
+  steps:
+  - intent: inform_unidentifiable
+  - action: utter_apology_unidentifiable
+  - action: utter_show_menu
+
+- story: air ticket neer window
+  steps:
+  - intent: buy_air_ticket
+  - action: utter_ask_start_point
+  - intent: inform_demand_destination
+  - action: utter_ask_destination
+  - intent: inform_demand_destination
+  - action: utter_ask_demand_seat
+  - intent: inform_demand_seat_neer_window
+  - action: utter_ask_for_wait
+  - action: utter_give_air_ticket
+  - action: utter_choose_service_by_id
+  - intent: choose_service_id
+  - action: utter_add_the_service
+  - action: utter_ask_for_pay_charge
+  - action: utter_select_else
+
+- story: air ticket not window
+  steps:
+  - intent: buy_air_ticket
+  - action: utter_ask_start_point
+  - intent: inform_demand_destination
+  - action: utter_ask_destination
+  - intent: inform_demand_destination
+  - action: utter_ask_demand_seat
+  - intent: inform_demand_seat_not_neer_window
+  - action: utter_ask_for_wait
+  - action: utter_give_air_ticket
+  - action: utter_choose_service_by_id
+  - intent: choose_service_id
+  - action: utter_add_the_service
+  - action: utter_ask_for_pay_charge
+  - action: utter_select_else
+
+- story: rail ticket
+  steps:
+  - intent: buy_rail_ticket
+  - action: utter_ask_start_point
+  - intent: inform_demand_destination
+  - action: utter_ask_destination
+  - intent: inform_demand_destination
+  - action: utter_ask_demand_seat
+  - intent: inform_demand_seat_neer_window
+  - action: utter_ask_for_wait
+  - action: utter_give_rail_ticket
+  - action: utter_choose_service_by_id
+  - intent: choose_service_id
+  - action: utter_add_the_service
+  - action: utter_ask_for_pay_charge
+  - action: utter_select_else
+
+- story: rail ticket
+  steps:
+  - intent: buy_rail_ticket
+  - action: utter_ask_start_point
+  - intent: inform_demand_destination
+  - action: utter_ask_destination
+  - intent: inform_demand_destination
+  - action: utter_ask_demand_seat
+  - intent: inform_demand_seat_not_neer_window
+  - action: utter_ask_for_wait
+  - action: utter_give_rail_ticket
+  - action: utter_choose_service_by_id
+  - intent: choose_service_id
+  - action: utter_add_the_service
+  - action: utter_ask_for_pay_charge
+  - action: utter_select_else
+
+- story: modify the order (sad path)
+  steps:
+  - intent: modify_order
+  - action: utter_modify_order
+  - action: utter_show_users_order
+  - action: utter_modify_order2
+  - intent: deny
+  - action: utter_select_else
+
+- story: modify the order (happy path)
+  steps:
+  - intent: modify_order
+  - action: utter_modify_order
+  - action: utter_show_users_order
+  - action: utter_modify_order2
+  - intent: choose_service_id
+  - action: utter_cancel_users_service
+  - action: utter_select_else
