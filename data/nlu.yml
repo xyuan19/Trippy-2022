@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +28,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -39,7 +36,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -49,15 +45,12 @@ nlu:
     - don't like that
     - no way
     - not really
-
-
 - intent: services_human
   examples: |
     - Human services
     - Human
     - I need human help
     - I need someone alive to talk to me
-
 - intent: human_chat
   examples: |
     - human chat
@@ -65,22 +58,18 @@ nlu:
     - chat with supervisor
     - I want to chat
     - I'd like to talk to the human supervisor
-
 - intent: human_email
   examples: |
     - Email
     - give me the email address
     - I want to sent email
     - email address
-
 - intent: human_call
   examples: |
     - call
     - I can give you a phone number
     - Have the supervisor call me
     - I'd like to call to the supervisor.
-
-
 - intent: browse_service_list
   examples: |
     - show your service list
@@ -89,7 +78,6 @@ nlu:
     - Please provide service list
     - I'd like to check the service list
     - I'd like to browse the service information
-
 - intent: brows_travel_package_information
   examples: |
     - Travel packages
@@ -101,7 +89,6 @@ nlu:
     - Please provide package information
     - I'd like to check the package information
     - I'd like to browse the package information
-
 - intent: inform_demand_destination
   examples: |
     - Destination [Nanjing](destination)
@@ -114,7 +101,6 @@ nlu:
     - demand:[Hainan](destination)
     - [guilin](destination)
     - Here’s my demand [Guilin](destination)
-
 - intent: inform_demand_seat_neer_window
   examples: |
     - near window
@@ -122,7 +108,6 @@ nlu:
     - window
     - Window
     - i want the seat near the window.
-
 - intent: inform_demand_seat_not_neer_window
   examples: |
     - near corridor
@@ -132,7 +117,6 @@ nlu:
     - i want the seat near the corridor.
     - not near window
     - Not by the window
-
 - intent: longtime_package
   examples: |
     - Over than 10 days
@@ -140,7 +124,6 @@ nlu:
     - I need a package at least ten days
     - The longer kind
     - longer
-
 - intent: shorttime_package
   examples: |
     - Less than 10 days
@@ -149,27 +132,22 @@ nlu:
     - I need a package less than 10 days
     - The shorter kind
     - shorter
-
 - intent: airline_services
   examples: |
     - Airline services
     - Airline
     - air
     - I need air service
-
 - intent: check_in_baggage
   examples: |
     - Check-in baggage
     - Check-in
     - baggage
     - I'd like to check my baggage
-
 - intent: inform_information
   examples: |
     - the weight is [8](weight) kg.
     - the weight is [3.8](weight) kg.
-    - It is [8](weight) kg.
-    - the weight is [8](weight) kg.
     - It is [8](weight) kg.
     - the weight is [9](weight) kg.
     - It is [1](weight) kg.
@@ -178,14 +156,12 @@ nlu:
     - it is [2](weight) kg.
     - [10](weight) kg.
     - It is [1.2](weight).
-
 - intent: accommodation_services
   examples: |
     - Accommodation services
     - Accommodation
     - acc
     - Enquiries on Accommodation Services
-
 - intent: lunch_services
   examples: |
     - lunch
@@ -194,7 +170,6 @@ nlu:
     - lunch services
     - i want to brows lunch services
     - where can i go to have a meal?
-
 - intent: inform_feedback
   examples: |
     - [0](feedback)
@@ -209,7 +184,6 @@ nlu:
     - Feedback is [8.6](feedback)
     - feedback : [6](feedback)
     - Here’s my feedback: [8](feedback)
-
 - intent: inform_scold
   examples: |
     - stupid bot
@@ -217,124 +191,6 @@ nlu:
     - FUCK
     - Dumb robot
     - ass
-
-
-- intent: inform_demand_destination
-  examples: |
-    - Destination [Nanjing](destination)
-    - Destination [nanjing](destination)
-    - [nanjing](destination)
-    - [Beijing](destination)
-    - My demand is [BeiJing](destination)
-    - My demand is [beijing](destination)
-    - demand:[HaiNan](destination)
-    - demand:[Hainan](destination)
-    - [guilin](destination)
-    - Here’s my demand [Guilin](destination)
-
-- intent: inform_demand_seat_neer_window
-  examples: |
-    - near window
-    - by the window
-    - window
-    - Window
-    - i want the seat near the window.
-
-- intent: inform_demand_seat_not_neer_window
-  examples: |
-    - near corridor
-    - by the corridor
-    - corridor
-    - Corridor
-    - i want the seat near the corridor.
-    - not near window
-    - Not by the window
-
-- intent: longtime_package
-  examples: |
-    - Over than 10 days
-    - Packages over than 10 days
-    - I need a package at least ten days
-    - The longer kind
-    - longer
-
-- intent: shorttime_package
-  examples: |
-    - Less than 10 days
-    - less than 10 days
-    - Packages for less than 10 days
-    - I need a package less than 10 days
-    - The shorter kind
-    - shorter
-
-- intent: airline_services
-  examples: |
-    - Airline services
-    - Airline
-    - air
-    - I need air service
-
-- intent: check_in_baggage
-  examples: |
-    - Check-in baggage
-    - Check-in
-    - baggage
-    - I'd like to check my baggage
-
-- intent: inform_information
-  examples: |
-    - the weight is [8](weight) kg.
-    - the weight is [3.8](weight) kg.
-    - It is [8](weight) kg.
-    - the weight is [8](weight) kg.
-    - It is [8](weight) kg.
-    - the weight is [9](weight) kg.
-    - It is [1](weight) kg.
-    - It is [1.2](weight) kg.
-    - It is [1.20](weight) kg.
-    - it is [2](weight) kg.
-    - [10](weight) kg.
-    - It is [1.2](weight).
-
-- intent: accommodation_services
-  examples: |
-    - Accommodation services
-    - Accommodation
-    - acc
-    - Enquiries on Accommodation Services
-
-- intent: lunch_services
-  examples: |
-    - lunch
-    - meal
-    - have meal
-    - lunch services
-    - i want to brows lunch services
-    - where can i go to have a meal?
-
-- intent: inform_feedback
-  examples: |
-    - [0](feedback)
-    - [1](feedback)
-    - [2](feedback)
-    - [3](feedback)
-    - [4](feedback)
-    - [5.5](feedback)
-    - [6.2](feedback)
-    - [8.7](feedback)
-    - [9](feedback)
-    - Feedback is [8.6](feedback)
-    - feedback : [6](feedback)
-    - Here’s my feedback: [8](feedback)
-
-- intent: inform_scold
-  examples: |
-    - stupid bot
-    - fuck
-    - FUCK
-    - Dumb robot
-    - ass
-
 - intent: inform_unidentifiable
   examples: |
     - hsbdhashxnuci
@@ -351,7 +207,6 @@ nlu:
     - ;
     - .
     - 024s
-
 - intent: buy_air_ticket
   examples: |
     - Airline ticket
@@ -359,18 +214,15 @@ nlu:
     - air ticket
     - air tickets
     - I need air tickets
-
 - intent: buy_rail_ticket
   examples: |
     - rail ticket
     - Rail tickets
-    - rail ticket
     - rail tickets
     - I need rail tickets
     - Rail service
     - rail service
     - I need rail service
-
 - intent: choose_service_id
   examples: |
     - [0](service_id)
@@ -395,21 +247,22 @@ nlu:
     - [67](service_id)
     - [35](service_id)
     - [66](service_id)
-    - [7](service_id)
-
 - intent: modify_order
   examples: |
     - modify order
     - modify my order
     - I want to modify my order
     - I need modify order service
-
 - intent: sign_in
   examples: |
     - sign in
     - Sign in
     - sign-in
     - create my account
+    - [test](username)
+    - [123456test](password)
+    - [tests](username)
+    - [123456326tes5](password)
 
 - intent: sign_up
   examples: |
@@ -417,3 +270,5 @@ nlu:
     - sign up please
     - i would like to sign up
     - sign up
+    - [XiaoyuYuan](username)
+    - [000305xyy](password)

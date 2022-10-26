@@ -22,5 +22,12 @@
       <jdbc-url>jdbc:sqlite:D:\Desktop\trippy-db-api-main\trippy.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="Trippy-v2" uuid="78e86b18-dc5e-4060-b2c7-ef5c4bdead5b">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Administrator\Desktop\Trippy-2022\Trippy-v2.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

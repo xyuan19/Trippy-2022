@@ -1,7 +1,5 @@
 version: "2.0"
-
 rules:
-
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -18,3 +16,38 @@ rules:
   - action: utter_select_else
   - intent: deny
   - action: utter_select_feedback
+
+- rule: Activate sign in form
+  steps:
+  - intent: sign_in
+  - action: sign_in_form
+  - active_loop: sign_in_form
+
+- rule: Submit sign in form
+  condition:
+  - active_loop: sign_in_form
+  steps:
+  - action: sign_in_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_sign_in
+  wait_for_user_input: false
+
+
+- rule: Activate sign up form
+  steps:
+  - intent: sign_up
+  - action: sign_up_form
+  - active_loop: sign_up_form
+
+- rule: Submit sign up form
+  condition:
+  - active_loop: sign_up_form
+  steps:
+  - action: sign_up_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_sign_up
+  wait_for_user_input: false

@@ -49,9 +49,9 @@ intents:
     use_entities: true
 - buy_rail_ticket:
     use_entities: true
-- inform_demand_seat_not_neer_window:
+- inform_demand_seat_not_near_window:
     use_entities: true
-- inform_demand_seat_neer_window:
+- inform_demand_seat_near_window:
     use_entities: true
 - choose_service_id:
     use_entities: true
@@ -66,6 +66,10 @@ intents:
 - london:
     use_entities: true
 - sign_up:
+    use_entities: true
+- inform_demand_seat_neer_window:
+    use_entities: true
+- inform_demand_seat_not_neer_window:
     use_entities: true
 entities:
 - destination
@@ -129,16 +133,20 @@ slots:
     auto_fill: true
     influence_conversation: false
 responses:
+  utter_ask_sign_in_form_username:
+  - text: What's your username?
+  utter_ask_sign_in_form_password:
+  - text: Can you tell me your password ❀?
   utter_greet:
   - text: |-
       Hi. Nice to talk to you.
-      I'm a chatbot from Trippy Travel. And my name is Tetee.
+      I'm a chatbot from Trippy Travel. And my name is Trippy.
   utter_goodbye:
   - text: Bye
   utter_show_menu:
   - text: |-
       I can provide you with these services:
-      	Browse service list, to strat my trip
+      	Browse service list, to start my trip
       	Modify my order
       	Human services
   utter_show_list_human:
@@ -236,21 +244,23 @@ responses:
         package id = 5:go London from 9,Oct to 27,Oct. with free guides.
 actions:
 - action_sign_in_or_up
+- action_sign_in
+- action_sign_up
 forms:
   sign_in_form:
     required_slots:
-      password:
-      - entity: password
-        type: from_entity
       username:
       - entity: username
+        type: from_entity
+      password:
+      - entity: password
         type: from_entity
   sign_up_form:
     required_slots:
-      password:
-      - entity: password
-        type: from_entity
       username:
       - entity: username
+        type: from_entity
+      password:
+      - entity: password
         type: from_entity
 e2e_actions: []
