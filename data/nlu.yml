@@ -89,6 +89,7 @@ nlu:
     - Please provide package information
     - I'd like to check the package information
     - I'd like to browse the package information
+
 - intent: inform_demand_destination
   examples: |
     - Destination [Nanjing](destination)
