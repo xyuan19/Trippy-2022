@@ -255,6 +255,7 @@ forms:
       password:
       - entity: password
         type: from_entity
+
   sign_up_form:
     required_slots:
       username:
