@@ -86,3 +86,31 @@ class Sign_up(Action):
                 SlotSet("username", None),
                 SlotSet("password", None)
             ]
+
+class airQuery(Action):
+    def name(self) -> Text:
+        return "action_air_query"
+
+    # get username, password
+    async def run(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        start_place = tracker.get_slot("start_place")
+        end_place = tracker.get_slot("end_place")
+
+        # query air ticket
+        air = query_air_ticket(start_place,end_place)
+
+        # given back
+        if not air is None:
+            dispatcher.utter_message(f"There is the air service information for you:\n {air}")
+        else:
+            dispatcher.utter_message(f"Sorry, there is no suitable itinerary.")
+            dispatcher.utter_message(response="air_form")
+            return [
+                SlotSet("start_place", None),
+                SlotSet("end_place", None)
+            ]

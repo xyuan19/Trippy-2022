@@ -50,6 +50,25 @@ rules:
     - requested_slot: null
   - action: action_sign_up
   wait_for_user_input: false
+
+
+- rule: Activate air form
+  steps:
+  - intent: buy_air_ticket
+  - action: air_form
+  - active_loop: air_form
+
+- rule: Submit air form
+  condition:
+  - active_loop: air_form
+  steps:
+  - action: air_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_air_query
+  wait_for_user_input: false
+
 #
 #- rule: make sure user login before proceed
 #  condition:

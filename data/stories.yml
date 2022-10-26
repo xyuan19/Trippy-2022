@@ -169,38 +169,40 @@ stories:
   - intent: inform_unidentifiable
   - action: utter_apology_unidentifiable
   - action: utter_show_menu
-- story: air ticket near window
+
+- story: air ticket
   steps:
   - intent: buy_air_ticket
-  - action: utter_ask_start_point
-  - intent: inform_demand_destination
-  - action: utter_ask_destination
-  - intent: inform_demand_destination
-  - action: utter_ask_demand_seat
-  - intent: inform_demand_seat_near_window
-  - action: utter_ask_for_wait
-  - action: utter_give_air_ticket
+
+  - action: air_form
+  - active_loop: air_form
+  - slot_was_set:
+    - requested_slot: start_place
+  - slot_was_set:
+    - start_place: Nanjing
+  - slot_was_set:
+    - requested_slot: end_place
+  - slot_was_set:
+    - end_place: Shanghai
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_air_query
+
+#  - action: utter_ask_start_point
+#  - intent: inform_demand_destination
+#  - action: utter_ask_destination
+#  - intent: inform_demand_destination
+#  - action: utter_ask_for_wait
+#  - action: utter_give_air_ticket
+
   - action: utter_choose_service_by_id
   - intent: choose_service_id
   - action: utter_add_the_service
+
   - action: utter_ask_for_pay_charge
   - action: utter_select_else
-- story: air ticket not window
-  steps:
-  - intent: buy_air_ticket
-  - action: utter_ask_start_point
-  - intent: inform_demand_destination
-  - action: utter_ask_destination
-  - intent: inform_demand_destination
-  - action: utter_ask_demand_seat
-  - intent: inform_demand_seat_not_near_window
-  - action: utter_ask_for_wait
-  - action: utter_give_air_ticket
-  - action: utter_choose_service_by_id
-  - intent: choose_service_id
-  - action: utter_add_the_service
-  - action: utter_ask_for_pay_charge
-  - action: utter_select_else
+
 - story: rail ticket
   steps:
   - intent: buy_rail_ticket

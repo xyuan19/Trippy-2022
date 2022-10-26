@@ -90,18 +90,18 @@ nlu:
     - I'd like to check the package information
     - I'd like to browse the package information
 
-- intent: inform_demand_destination
+- intent: place
   examples: |
-    - Destination [Nanjing](destination)
-    - Destination [nanjing](destination)
-    - [nanjing](destination)
-    - [Beijing](destination)
-    - My demand is [BeiJing](destination)
-    - My demand is [beijing](destination)
-    - demand:[HaiNan](destination)
-    - demand:[Hainan](destination)
-    - [guilin](destination)
-    - Here’s my demand [Guilin](destination)
+    - Destination [Nanjing](places)
+    - Destination [nanjing](places)
+    - [nanjing](places)
+    - [Beijing](places)
+    - My demand is [BeiJing](places)
+    - My demand is [beijing](places)
+    - demand:[HaiNan](places)
+    - demand:[Hainan](places)
+    - [guilin](places)
+    - Here’s my demand [Guilin](places)
 - intent: inform_demand_seat_neer_window
   examples: |
     - near window

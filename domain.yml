@@ -75,6 +75,8 @@ intents:
     use_entities: true
 - inform_demand_seat_not_neer_window:
     use_entities: true
+- place:
+    use_entities: true
 entities:
 - destination
 - weight
@@ -84,6 +86,7 @@ entities:
 - password
 - login_or_not
 - sign_in_or_up
+- places
 slots:
   login_or_not:
     type: rasa.shared.core.slots.BooleanSlot
@@ -131,6 +134,16 @@ slots:
     influence_conversation: true
     max_value: 1.0
     min_value: 0.0
+  start_place:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  end_place:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   requested_slot:
     type: rasa.shared.core.slots.UnfeaturizedSlot
     initial_value: null
@@ -145,6 +158,10 @@ responses:
   - text: Please tell me the username you want to use. Note, please use username that only contains letters. The username should start with letters and no space or special characters should be used.
   utter_ask_sign_up_form_password:
   - text: Please tell me your password. Note, please use password that contains letters and numbers, and does not contain space.
+  utter_ask_air_form_start_place:
+  - text: Please tell me your start place. We have these places：Nanjing, Shanghai.
+  utter_ask_air_form_end_place:
+  - text: Please tell me your end place. We have these places：Nanjing, Shanghai.
   utter_greet:
   - text: |-
       Hi. Nice to talk to you.
@@ -254,21 +271,30 @@ actions:
 - action_sign_in_or_up
 - action_sign_in
 - action_sign_up
+- action_air_query
 forms:
   sign_in_form:
     required_slots:
-      username:
-      - entity: username
-        type: from_entity
       password:
       - entity: password
+        type: from_entity
+      username:
+      - entity: username
         type: from_entity
   sign_up_form:
     required_slots:
+      password:
+      - entity: password
+        type: from_entity
       username:
       - entity: username
         type: from_entity
-      password:
-      - entity: password
+  air_form:
+    required_slots:
+      end_place:
+      - entity: places
+        type: from_entity
+      start_place:
+      - entity: places
         type: from_entity
 e2e_actions: []

@@ -47,5 +47,13 @@ def check_user_information(username: str, input_password: str) -> bool:
         return
     return user_information.check_password(input_password)
 
-#get_user_by_username('test')
-#print(check_user_information('test','000305xyy'))
+def query_air_ticket(start_place: str, end_place: str) -> DataT:
+    with sqlite3.connect(DB_PATH) as c:
+        cur = c.cursor()
+        cur.execute("""
+            SELECT * FROM Air WHERE air_start_place=:start_place and air_end_place=:end_place
+        """, {"start_place": start_place,"end_place": end_place})
+        res = cur.fetchone()
+        l = tuple2dataclass(res, Air)
+        return l
+#print(query_air_ticket('nanjing','shanghai'))
