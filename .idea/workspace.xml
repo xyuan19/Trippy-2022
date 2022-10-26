@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcce3dc3-b71e-4ff6-88f3-abec6eb4cd47" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Trippy-v2.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trippy_class.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trippy_db_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Trippy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Trippy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="dcce3dc3-b71e-4ff6-88f3-abec6eb4cd47" name="Changes" comment="1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trippy-v2.db" beforeDir="false" afterPath="$PROJECT_DIR$/Trippy-v2.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/actions/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/actions/actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/nlu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data/nlu.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/rules.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data/rules.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/stories.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data/stories.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain.yml" beforeDir="false" afterPath="$PROJECT_DIR$/domain.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events.db" beforeDir="false" afterPath="$PROJECT_DIR$/events.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/20221014-033421.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/20221014-035817.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rasa(1).db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rasa.db" beforeDir="false" afterPath="$PROJECT_DIR$/rasa.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trippy_db_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/trippy_db_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/Administrator/Desktop/trippy-db-api-main",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -123,6 +112,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="dcce3dc3-b71e-4ff6-88f3-abec6eb4cd47" name="Changes" comment="" />
@@ -141,8 +133,23 @@
       <workItem from="1665710851504" duration="1534000" />
       <workItem from="1665742423869" duration="1619000" />
       <workItem from="1666598854667" duration="2232000" />
-      <workItem from="1666703297060" duration="24999000" />
+      <workItem from="1666703297060" duration="35513000" />
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <created>1666808084668</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666808084668</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1">
+      <created>1666808220594</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666808220594</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +206,13 @@
                       </list>
                     </value>
                   </entry>
+                  <entry key="text">
+                    <value>
+                      <list>
+                        <option value="ssh" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>
@@ -207,8 +221,12 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Trippy_2022$trippy_db_utils__1_.coverage" NAME="trippy_db_utils (1) Coverage Results" MODIFIED="1666717860810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Trippy_2022$trippy_db_utils__1_.coverage" NAME="trippy_db_utils (1) Coverage Results" MODIFIED="1666811713161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Trippy_2022$trippy_db_utils.coverage" NAME="trippy-db-utils Coverage Results" MODIFIED="1666708246361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

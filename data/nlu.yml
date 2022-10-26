@@ -259,10 +259,18 @@ nlu:
     - Sign in
     - sign-in
     - create my account
+
+- intent: username
+  examples: |
     - [test](username)
+    - [tests](username)  
+    - [XiaoyuYuan](username)
+
+- intent: password
+  examples: |
     - [123456test](password)
-    - [tests](username)
-    - [123456326tes5](password)
+    - [123456326tes5](password)  
+    - [000305xyy](password)
 
 - intent: sign_up
   examples: |
@@ -270,5 +278,3 @@ nlu:
     - sign up please
     - i would like to sign up
     - sign up
-    - [XiaoyuYuan](username)
-    - [000305xyy](password)

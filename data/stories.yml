@@ -7,7 +7,6 @@ stories:
   - slot_was_set:
     - login_or_not: false
   - action: action_sign_in_or_up
-
 - story: sign in
   steps:
   - intent: sign_in
@@ -18,16 +17,19 @@ stories:
   - slot_was_set:
     - username: test
   - slot_was_set:
+    - username: test
+  - slot_was_set:
     - requested_slot: password
   - slot_was_set:
-    - password: '123456test'
+    - password: 123456test
+  - slot_was_set:
+    - password: 123456test
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
   - action: action_sign_in
   - slot_was_set:
     - login_or_not: true
-  - action: utter_show_menu
 
 - story: sign up
   steps:
@@ -41,19 +43,19 @@ stories:
   - slot_was_set:
     - requested_slot: password
   - slot_was_set:
-    - password: '000305xyy'
+    - password: 000305xyy
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
   - action: action_sign_up
   - slot_was_set:
     - login_or_not: true
-  - action: utter_show_menu
 
 - story: 15 Human services
   steps:
   - intent: services_human
   - action: utter_show_list_human
+
 - story: chat with the supervisor
   steps:
   - intent: human_chat
@@ -248,14 +250,3 @@ stories:
   - intent: choose_service_id
   - action: utter_cancel_users_service
   - action: utter_select_else
-- story: Story from Conversation ID 018eb5a0c52a44cc85641f71e05b189d
-  steps:
-  - action: utter_greet
-  - slot_was_set:
-    - sign_in_or_up: greet
-  - intent: greet
-  - intent: sign_in
-  - action: sign_in_form
-  - active_loop: sign_in_form
-  - slot_was_set:
-    - requested_slot: password

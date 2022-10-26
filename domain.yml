@@ -5,6 +5,10 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- username:
+    use_entities: true
+- password:
+    use_entities: true
 - greet:
     use_entities: true
 - goodbye:
@@ -137,6 +141,10 @@ responses:
   - text: What's your username?
   utter_ask_sign_in_form_password:
   - text: Can you tell me your password ❀?
+  utter_ask_sign_up_form_username:
+  - text: Please tell me the username you want to use. Note, please use username that only contains letters. The username should start with letters and no space or special characters should be used.
+  utter_ask_sign_up_form_password:
+  - text: Please tell me your password. Note, please use password that contains letters and numbers, and does not contain space.
   utter_greet:
   - text: |-
       Hi. Nice to talk to you.
@@ -255,7 +263,6 @@ forms:
       password:
       - entity: password
         type: from_entity
-
   sign_up_form:
     required_slots:
       username:

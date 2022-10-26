@@ -41,14 +41,18 @@ class Sign_in(Action):
         password = tracker.get_slot("password")
 
         # connected to db, check user's information
-        print(check_user_information(username,password))
+        # print(check_user_information(username,password))
         if check_user_information(username, password):
             dispatcher.utter_message(f"Hi {username}")
+            dispatcher.utter_message(response="utter_show_menu")
         else:
-            dispatcher.utter_message(f"sorry, The user name or password is incorrect."
-                                     f"\nYou can try again or sign in by tester's account:"
-                                     f"\n\t username: test"
-                                     f"\n\t password: 123456test")
+            dispatcher.utter_message(f"sorry, The user name or password is incorrect.\nYou can try again or sign in by tester's account:\n\t username: test\n\t password: 123456test")
+            dispatcher.utter_message(response="sign_in_form")
+            return [
+                SlotSet("login_or_not", False),
+                SlotSet("username", None),
+                SlotSet("password", None)
+            ]
 
 
 class Sign_up(Action):
@@ -66,7 +70,18 @@ class Sign_up(Action):
         password = tracker.get_slot("password")
 
         # connected to db, add user's information
+        add_user_information(username,password)
 
         # given back
-        print(check_user_information(username,password))
-        dispatcher.utter_message(f"Hi {username}")
+        if check_user_information(username, password):
+            dispatcher.utter_message(f"Hi {username}")
+            dispatcher.utter_message(response="utter_show_menu")
+        else:
+            dispatcher.utter_message(f"sorry, The name or password is incorrect."
+                                     f"\nYou can try again to sign up.")
+            dispatcher.utter_message(response="sign_up_form")
+            return [
+                SlotSet("login_or_not", False),
+                SlotSet("username", None),
+                SlotSet("password", None)
+            ]

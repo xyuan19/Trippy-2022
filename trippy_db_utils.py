@@ -10,13 +10,15 @@ DataT = TypeVar("DataT")  # define type var -> DataT
 
 def tuple2dataclass(tuple: Tuple, dataT: Generic[DataT]) -> DataT:
     '''Convert tuple to a dataclass'''
+    if tuple is None:
+        return
     attibutes = dataT.__fields__.keys()
     d = {}
     for i, a in enumerate(attibutes):
         if i < len(tuple):
             d.update({a: tuple[i]})
     d = dataT.parse_obj(d)
-    #print(d)
+    print(d)
     return d
 
 def add_user_information(username: str, password: str) -> User:
@@ -25,7 +27,7 @@ def add_user_information(username: str, password: str) -> User:
         cur.execute("""
                     insert into user (username, password) 
                     values (:username, :password)
-                """, {"username": username, "password_key": password})
+                """, {"username": username, "password": password})
         c.commit()
         return get_user_by_username(username)
 
@@ -41,7 +43,9 @@ def get_user_by_username(username: str) -> User:
 
 def check_user_information(username: str, input_password: str) -> bool:
     user_information = get_user_by_username(username)
+    if user_information is None:
+        return
     return user_information.check_password(input_password)
 
 #get_user_by_username('test')
-#print(check_user_information('test','123456'))
+#print(check_user_information('test','000305xyy'))

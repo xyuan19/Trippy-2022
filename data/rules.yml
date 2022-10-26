@@ -34,7 +34,6 @@ rules:
   - action: action_sign_in
   wait_for_user_input: false
 
-
 - rule: Activate sign up form
   steps:
   - intent: sign_up
@@ -51,3 +50,37 @@ rules:
     - requested_slot: null
   - action: action_sign_up
   wait_for_user_input: false
+#
+#- rule: make sure user login before proceed
+#  condition:
+#    - slot_was_set:
+#      - login_or_not: false
+#  steps:
+#  - or:
+#    - intent: greet
+#    - intent: services_human
+#    - intent: human_chat
+#    - intent: human_email
+#    - intent: human_call
+#    - intent: browse_service_list
+#    - intent: brows_travel_package_information
+#    - intent: inform_demand_destination
+#    - intent: longtime_package
+#    - intent: shorttime_package
+#    - intent: airline_services
+#    - intent: check_in_baggage
+#    - intent: inform_information
+#    - intent: accommodation_services
+#    - intent: inform_feedback
+#    - intent: inform_scold
+#    - intent: inform_unidentifiable
+#    - intent: buy_air_ticket
+#    - intent: buy_rail_ticket
+#    - intent: inform_demand_seat_not_near_window
+#    - intent: inform_demand_seat_near_window
+#    - intent: choose_service_id
+#    - intent: modify_order
+#    - intent: inform_demand_seat_neer_window
+#    - intent: inform_demand_seat_not_neer_window
+#  - action: action_sign_in_or_up
+
