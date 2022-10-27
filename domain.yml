@@ -291,10 +291,10 @@ forms:
         type: from_entity
   air_form:
     required_slots:
-      end_place:
+      start_place:
       - entity: places
         type: from_entity
-      start_place:
+      end_place:
       - entity: places
         type: from_entity
 e2e_actions: []

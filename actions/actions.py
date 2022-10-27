@@ -103,6 +103,7 @@ class airQuery(Action):
 
         # query air ticket
         air = query_air_ticket(start_place,end_place)
+        print(air)
 
         # given back
         if not air is None:

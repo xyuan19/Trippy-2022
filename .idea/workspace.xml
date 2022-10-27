@@ -3,16 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="dcce3dc3-b71e-4ff6-88f3-abec6eb4cd47" name="Changes" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Trippy-v2.db" beforeDir="false" afterPath="$PROJECT_DIR$/Trippy-v2.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/actions/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/actions/actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/nlu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data/nlu.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/rules.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data/rules.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/stories.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data/stories.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain.yml" beforeDir="false" afterPath="$PROJECT_DIR$/domain.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events.db" beforeDir="false" afterPath="$PROJECT_DIR$/events.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rasa.db" beforeDir="false" afterPath="$PROJECT_DIR$/rasa.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trippy_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/trippy_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trippy_db_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/trippy_db_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/20221027-044744.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/20221027-045706.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/20221027-050853.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/20221027-052732.tar.gz" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +130,7 @@
       <workItem from="1665710851504" duration="1534000" />
       <workItem from="1665742423869" duration="1619000" />
       <workItem from="1666598854667" duration="2232000" />
-      <workItem from="1666703297060" duration="42616000" />
+      <workItem from="1666703297060" duration="43705000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1666808084668</created>
@@ -171,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666822336581</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test">
+      <created>1666827484159</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666827484159</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
